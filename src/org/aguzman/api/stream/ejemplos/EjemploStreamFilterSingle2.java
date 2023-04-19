@@ -12,12 +12,11 @@ public class EjemploStreamFilterSingle2 {
                         "Pepe García")
                 .map(nombre-> new Usuario(nombre.split(" ")[0], nombre.split(" ")[1]))
                 .peek(System.out::println)
-                .filter(u-> u.getId().equals(2))
-                .findFirst().get();
+                .filter(u-> u.getId().equals(4))
+                .findFirst().orElseGet(() -> new Usuario("John","Doe"));
 
 
         System.out.println(usuario);
-
 
     }
 }
